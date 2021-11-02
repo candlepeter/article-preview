@@ -1,0 +1,249 @@
+:root {
+  --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --desaturatedDarkBlue: hsl(214, 17%, 51%);
+  --grayishBlue: hsl(212, 23%, 69%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+.flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.d.block {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+.container {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--desaturatedDarkBlue);
+}
+
+.wrapper {
+  display: grid;
+}
+
+.text-content {
+  position: relative;
+}
+
+.text-content > *:not(:first-child) {
+  margin-top: 1em;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container > a {
+  margin-top: 1.5em;
+  padding: 1em;
+  background-color: var(--grayishBlue);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.profile-container > a img {
+  width: 20px;
+  height: 20px;
+}
+
+.profile,
+.social {
+  position: absolute;
+}
+
+.profile > div {
+  margin-left: 1.5em;
+}
+
+.profile > img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.profile > h4 {
+  color: var(--veryDarkGrayishBlue);
+}
+
+.profile > p {
+  color: var(--desaturatedDarkBlue);
+}
+
+@media screen and (min-width: 375px) {
+  .wrapper {
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 350px 400px;
+    grid-template-areas:
+      "L"
+      "R";
+  }
+  .image-content {
+    grid-area: L;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url(./images/drawers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .text-content {
+    grid-area: R;
+    padding: 2.5em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--lightGrayishBlue);
+  }
+
+  .text-content > h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: var(--veryDarkGrayishBlue);
+    margin-top: -0.05em;
+  }
+
+  .text-content > p {
+    font-size: 1.21em;
+    line-height: 1.5em;
+    color: var(--desaturatedDarkBlue);
+  }
+
+  .profile {
+    bottom: 2em;
+  }
+
+  .profile-container > a {
+    position: absolute;
+    bottom: 3.5em;
+    right: 3em;
+  }
+
+  .social > *:not(:first-child) {
+    margin-left: 1.5em;
+  }
+
+  .social {
+    width: 320px;
+    bottom: 2em;
+    background-color: var(--veryDarkGrayishBlue);
+    padding: 2em;
+    border-radius: 10px;
+  }
+
+  .social > span {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-right: -1em;
+    color: var(--grayishBlue);
+  }
+
+  .social > img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    width: 70%;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 390px;
+    grid-template-areas: "L R";
+  }
+  .image-content {
+    grid-area: L;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-image: url(./images/drawers.jpg);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .text-content {
+    grid-area: R;
+    padding: 2.5em;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--lightGrayishBlue);
+  }
+
+  .text-content > h1 {
+    font-size: 2.3em;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: var(--veryDarkGrayishBlue);
+    margin-top: -0.05em;
+  }
+
+  .text-content > p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: var(--desaturatedDarkBlue);
+  }
+
+  .social > *:not(:first-child) {
+    margin-left: 2.5em;
+  }
+
+  .social {
+    width: 420px;
+    bottom: 9em;
+    right: -12em;
+    background-color: var(--veryDarkGrayishBlue);
+    padding: 1.5em 3em;
+    border-radius: 10px;
+  }
+
+  .social > span {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--grayishBlue);
+  }
+
+  .social > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid var(--veryDarkGrayishBlue);
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    bottom: -0.6em;
+    left: 3em;
+  }
+}
